@@ -10,45 +10,95 @@ interface PolicyCardProps {
 }
 
 const PolicyCard = ({ title, description, icon: Icon, delay = 0 }: PolicyCardProps) => {
-  const [isRevealed, setIsRevealed] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
 
   return (
-    <Card
-      className="group relative overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-hover border-border"
-      onClick={() => setIsRevealed(!isRevealed)}
+    <div 
+      className="perspective-1000 h-[280px]"
       style={{ animationDelay: `${delay}ms` }}
     >
-      {/* Background overlay with reveal animation */}
       <div
-        className={`absolute inset-0 bg-gradient-primary transition-all duration-700 ${
-          isRevealed ? "translate-x-full" : "translate-x-0"
+        className={`relative w-full h-full transition-all duration-700 transform-style-3d cursor-pointer ${
+          isFlipped ? 'rotate-y-180' : ''
         }`}
-      />
-
-      {/* Content */}
-      <div className="relative p-6 min-h-[200px] flex flex-col">
-        <div className="flex items-center space-x-3 mb-4">
-          <div className="w-12 h-12 rounded-lg bg-primary-light flex items-center justify-center group-hover:scale-110 transition-transform">
-            <Icon className="w-6 h-6 text-primary" />
-          </div>
-          <h3 className="text-xl font-semibold text-foreground">{title}</h3>
-        </div>
-
-        <p
-          className={`text-muted-foreground transition-opacity duration-500 ${
-            isRevealed ? "opacity-100" : "opacity-0"
-          }`}
+        onClick={() => setIsFlipped(!isFlipped)}
+        style={{
+          transformStyle: 'preserve-3d',
+          transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+        }}
+      >
+        {/* Front of card */}
+        <Card
+          className="absolute inset-0 backface-hidden overflow-hidden group hover:shadow-glow transition-all duration-300 border-border bg-gradient-to-br from-card to-card/80 backdrop-blur-sm"
+          style={{ backfaceVisibility: 'hidden' }}
         >
-          {description}
-        </p>
+          <div className="relative h-full p-6 flex flex-col justify-between">
+            {/* Gradient overlay for depth */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            
+            <div className="relative z-10">
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-elegant">
+                  <Icon className="w-7 h-7 text-primary-foreground" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                {title}
+              </h3>
+            </div>
 
-        {!isRevealed && (
-          <div className="absolute bottom-6 left-6 right-6 text-sm text-muted-foreground italic">
-            Klik for at læse mere
+            <div className="relative z-10 flex items-center text-sm text-muted-foreground italic group-hover:text-primary transition-colors">
+              <span>Klik for at læse mere</span>
+              <svg 
+                className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
           </div>
-        )}
+        </Card>
+
+        {/* Back of card */}
+        <Card
+          className="absolute inset-0 backface-hidden overflow-hidden border-border bg-gradient-primary shadow-glow"
+          style={{ 
+            backfaceVisibility: 'hidden',
+            transform: 'rotateY(180deg)',
+          }}
+        >
+          <div className="relative h-full p-6 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-14 h-14 rounded-xl bg-primary-foreground/10 backdrop-blur-sm flex items-center justify-center">
+                  <Icon className="w-7 h-7 text-primary-foreground" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-primary-foreground mb-4">
+                {title}
+              </h3>
+              <p className="text-primary-foreground/90 leading-relaxed">
+                {description}
+              </p>
+            </div>
+
+            <div className="flex items-center text-sm text-primary-foreground/80 italic">
+              <svg 
+                className="w-4 h-4 mr-2 rotate-180" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+              <span>Klik for at lukke</span>
+            </div>
+          </div>
+        </Card>
       </div>
-    </Card>
+    </div>
   );
 };
 

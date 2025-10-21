@@ -9,6 +9,7 @@ const Navigation = () => {
 
   const links = [
     { name: "Forside", path: "/" },
+    { name: "Partiprogram", path: "/partiprogram" },
     { name: "Mærkesager", path: "/maerkesager" },
     { name: "Bliv medlem", path: "/bliv-medlem" },
     { name: "Kontakt", path: "/kontakt" },

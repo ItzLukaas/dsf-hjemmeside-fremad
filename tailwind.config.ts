@@ -56,10 +56,15 @@ export default {
       backgroundImage: {
         'gradient-primary': 'var(--gradient-primary)',
         'gradient-subtle': 'var(--gradient-subtle)',
+        'gradient-glass': 'var(--gradient-glass)',
       },
       boxShadow: {
         'elegant': 'var(--shadow-elegant)',
         'hover': 'var(--shadow-hover)',
+        'glow': 'var(--shadow-glow)',
+      },
+      perspective: {
+        '1000': '1000px',
       },
       transitionTimingFunction: {
         'smooth': 'var(--transition-smooth)',
