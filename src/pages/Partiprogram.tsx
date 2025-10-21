@@ -2,54 +2,40 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Heart, Users, Leaf, Scale, Globe, Sparkles } from "lucide-react";
-
-const values = [
-  {
-    icon: Scale,
-    title: "Lighed",
-    description: "Et samfund hvor alle har lige muligheder uanset baggrund",
-  },
-  {
-    icon: Heart,
-    title: "Tryghed",
-    description: "Sikkerhed og velfærd for alle borgere gennem hele livet",
-  },
-  {
-    icon: Users,
-    title: "Fællesskab",
-    description: "Sammen skaber vi et stærkere og mere retfærdigt samfund",
-  },
-  {
-    icon: Leaf,
-    title: "Miljøansvar",
-    description: "Beskyttelse af vores planet for kommende generationer",
-  },
-  {
-    icon: Globe,
-    title: "Menneskerettigheder",
-    description: "Fundamentale rettigheder og værdighed for alle",
-  },
-  {
-    icon: Sparkles,
-    title: "Mulighed",
-    description: "Alle får chancen for at leve et godt og meningsfuldt liv",
-  },
-];
-
+const values = [{
+  icon: Scale,
+  title: "Lighed",
+  description: "Et samfund hvor alle har lige muligheder uanset baggrund"
+}, {
+  icon: Heart,
+  title: "Tryghed",
+  description: "Sikkerhed og velfærd for alle borgere gennem hele livet"
+}, {
+  icon: Users,
+  title: "Fællesskab",
+  description: "Sammen skaber vi et stærkere og mere retfærdigt samfund"
+}, {
+  icon: Leaf,
+  title: "Miljøansvar",
+  description: "Beskyttelse af vores planet for kommende generationer"
+}, {
+  icon: Globe,
+  title: "Menneskerettigheder",
+  description: "Fundamentale rettigheder og værdighed for alle"
+}, {
+  icon: Sparkles,
+  title: "Mulighed",
+  description: "Alle får chancen for at leve et godt og meningsfuldt liv"
+}];
 const Partiprogram = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Navigation />
       
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4">
           {/* Hero Section */}
           <div className="text-center mb-20 animate-fade-in">
-            <div className="inline-block mb-4">
-              <span className="px-4 py-2 bg-gradient-primary text-primary-foreground rounded-full text-sm font-semibold shadow-elegant">
-                Vores Partiprogram
-              </span>
-            </div>
+            
             <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
               Et samfund bygget på <br />
               <span className="text-transparent bg-clip-text bg-gradient-primary">
@@ -86,12 +72,9 @@ const Partiprogram = () => {
               Vores Grundværdier
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in-up">
-              {values.map((value, index) => (
-                <div
-                  key={value.title}
-                  className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 hover:shadow-hover transition-all duration-300 hover:-translate-y-1"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
+              {values.map((value, index) => <div key={value.title} className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 hover:shadow-hover transition-all duration-300 hover:-translate-y-1" style={{
+              animationDelay: `${index * 100}ms`
+            }}>
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
                   <div className="relative z-10">
@@ -105,8 +88,7 @@ const Partiprogram = () => {
                       {value.description}
                     </p>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
 
@@ -183,8 +165,6 @@ const Partiprogram = () => {
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Partiprogram;
