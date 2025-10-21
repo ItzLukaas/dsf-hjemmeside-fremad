@@ -1,17 +1,13 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="bg-gradient-primary text-primary-foreground mt-20">
+  return <footer className="bg-gradient-primary text-primary-foreground mt-20">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-background/10 rounded-lg flex items-center justify-center">
-                <span className="font-bold text-xl">DSF</span>
-              </div>
+              
               <span className="font-bold text-lg">Det Socialistiske Forbund</span>
             </div>
             <p className="text-primary-foreground/80 text-sm">
@@ -70,8 +66,6 @@ const Footer = () => {
           <p>&copy; {new Date().getFullYear()} Det Socialistiske Forbund. Alle rettigheder forbeholdes.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;

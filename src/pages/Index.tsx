@@ -4,37 +4,27 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-
 const Index = () => {
-  const policies = [
-    {
-      title: "Velfærd og sundhed",
-      icon: Heart,
-    },
-    {
-      title: "Miljø og klima",
-      icon: Leaf,
-    },
-    {
-      title: "Ligestilling",
-      icon: Users,
-    },
-    {
-      title: "Børn og unge",
-      icon: Baby,
-    },
-    {
-      title: "Arbejdsmarked",
-      icon: Briefcase,
-    },
-    {
-      title: "Offentlig sektor",
-      icon: Building2,
-    },
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const policies = [{
+    title: "Velfærd og sundhed",
+    icon: Heart
+  }, {
+    title: "Miljø og klima",
+    icon: Leaf
+  }, {
+    title: "Ligestilling",
+    icon: Users
+  }, {
+    title: "Børn og unge",
+    icon: Baby
+  }, {
+    title: "Arbejdsmarked",
+    icon: Briefcase
+  }, {
+    title: "Offentlig sektor",
+    icon: Building2
+  }];
+  return <div className="min-h-screen bg-background">
       <Navigation />
       
       {/* Hero Section */}
@@ -93,28 +83,21 @@ const Index = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto animate-fade-in-up">
             {policies.map((policy, index) => {
-              const Icon = policy.icon;
-              return (
-                <Card 
-                  key={policy.title}
-                  className="p-6 text-center hover:shadow-hover transition-all duration-300 hover:scale-105 cursor-pointer group"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
+            const Icon = policy.icon;
+            return <Card key={policy.title} className="p-6 text-center hover:shadow-hover transition-all duration-300 hover:scale-105 cursor-pointer group" style={{
+              animationDelay: `${index * 100}ms`
+            }}>
                   <div className="w-16 h-16 mx-auto mb-4 rounded-lg bg-primary-light flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Icon className="w-8 h-8 text-primary" />
                   </div>
                   <h3 className="font-semibold text-foreground">{policy.title}</h3>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
 
           <div className="text-center mt-12">
             <Link to="/maerkesager">
-              <Button variant="outline" className="hover:bg-secondary group">
-                Se alle mærkesager
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              
             </Link>
           </div>
         </div>
@@ -131,10 +114,7 @@ const Index = () => {
               Sammen er vi stærkere. Bliv en del af bevægelsen for et mere retfærdigt samfund.
             </p>
             <Link to="/bliv-medlem">
-              <Button 
-                size="lg"
-                className="bg-background text-primary hover:bg-background/90 hover:scale-105 transition-all"
-              >
+              <Button size="lg" className="bg-background text-primary hover:bg-background/90 hover:scale-105 transition-all">
                 Bliv medlem i dag
               </Button>
             </Link>
@@ -143,8 +123,6 @@ const Index = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
