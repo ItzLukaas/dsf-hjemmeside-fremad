@@ -1,4 +1,4 @@
-import { Heart, Leaf, Users, Baby, Briefcase, Building2 } from "lucide-react";
+import { Heart, Leaf, Users, Baby, Briefcase, Building2, Handshake, Scale, Globe } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PolicyCard from "@/components/PolicyCard";
@@ -33,6 +33,21 @@ const policies = [
     title: "Offentlig sektor",
     description: "En stærk offentlig sektor er fundamentet for velfærdssamfundet. Vi vil stoppe nedskæringer og investere i vores fælles service.",
     icon: Building2,
+  },
+  {
+    title: "Fred og internationalt samarbejde",
+    description: "Vi prioriterer fred og internationalt samarbejde frem for militær oprustning. Dialog og diplomati er vejen til en mere sikker verden.",
+    icon: Handshake,
+  },
+  {
+    title: "Religion og politik",
+    description: "Vi kæmper for adskillelse af religion og politik med fuld respekt for alles trosfrihed. Religion er en privat sag, og politik skal være sekulær.",
+    icon: Scale,
+  },
+  {
+    title: "Human udlændingepolitik",
+    description: "Vi arbejder for en human udlændingepolitik med fokus på integration, fællesskab og lige muligheder for alle, der kommer til Danmark.",
+    icon: Globe,
   },
 ];
 

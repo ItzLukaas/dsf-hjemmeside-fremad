@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Heart, Leaf, Users, Baby, Briefcase, Building2, ArrowRight } from "lucide-react";
+import { Heart, Leaf, Users, Baby, Briefcase, Building2, ArrowRight, Handshake, Scale, Globe } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -23,6 +23,15 @@ const Index = () => {
   }, {
     title: "Offentlig sektor",
     icon: Building2
+  }, {
+    title: "Fred og samarbejde",
+    icon: Handshake
+  }, {
+    title: "Religion og politik",
+    icon: Scale
+  }, {
+    title: "Udlændingepolitik",
+    icon: Globe
   }];
   return <div className="min-h-screen bg-background">
       <Navigation />
