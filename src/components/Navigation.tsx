@@ -1,10 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, UserCircle } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { User } from "@supabase/supabase-js";
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
   const location = useLocation();
+
+  useEffect(() => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (_event, session) => {
+        setUser(session?.user ?? null);
+      }
+    );
+
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
   const links = [{
     name: "Forside",
     path: "/"
@@ -40,6 +57,14 @@ const Navigation = () => {
                   {link.name}
                 </Button>
               </Link>)}
+            {user && (
+              <Link to="/profil">
+                <Button variant={isActive("/profil") ? "default" : "ghost"} className="transition-all">
+                  <UserCircle className="mr-2 h-4 w-4" />
+                  Profil
+                </Button>
+              </Link>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -56,6 +81,14 @@ const Navigation = () => {
                     {link.name}
                   </Button>
                 </Link>)}
+              {user && (
+                <Link to="/profil" onClick={() => setIsOpen(false)}>
+                  <Button variant={isActive("/profil") ? "default" : "ghost"} className="w-full justify-start">
+                    <UserCircle className="mr-2 h-4 w-4" />
+                    Profil
+                  </Button>
+                </Link>
+              )}
             </div>
           </div>}
       </div>
