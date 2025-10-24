@@ -8,6 +8,7 @@ import Partiprogram from "./pages/Partiprogram";
 import Policies from "./pages/Policies";
 import Membership from "./pages/Membership";
 import Contact from "./pages/Contact";
+import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/maerkesager" element={<Policies />} />
           <Route path="/bliv-medlem" element={<Membership />} />
           <Route path="/kontakt" element={<Contact />} />
+          <Route path="/auth" element={<Auth />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
