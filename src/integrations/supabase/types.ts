@@ -16,27 +16,74 @@ export type Database = {
     Tables: {
       profiles: {
         Row: {
+          address: string | null
+          avatar_url: string | null
+          bio: string | null
+          city: string | null
           created_at: string | null
           email: string
           full_name: string
           id: string
           phone: string | null
+          postal_code: string | null
+          updated_at: string | null
         }
         Insert: {
+          address?: string | null
+          avatar_url?: string | null
+          bio?: string | null
+          city?: string | null
           created_at?: string | null
           email: string
           full_name: string
           id: string
           phone?: string | null
+          postal_code?: string | null
+          updated_at?: string | null
         }
         Update: {
+          address?: string | null
+          avatar_url?: string | null
+          bio?: string | null
+          city?: string | null
           created_at?: string | null
           email?: string
           full_name?: string
           id?: string
           phone?: string | null
+          postal_code?: string | null
+          updated_at?: string | null
         }
         Relationships: []
+      }
+      social_connections: {
+        Row: {
+          connected_at: string | null
+          id: string
+          platform: string
+          user_id: string
+        }
+        Insert: {
+          connected_at?: string | null
+          id?: string
+          platform: string
+          user_id: string
+        }
+        Update: {
+          connected_at?: string | null
+          id?: string
+          platform?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "social_connections_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       votes: {
         Row: {
