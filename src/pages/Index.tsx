@@ -38,14 +38,33 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 bg-gradient-subtle">
-        <div className="container mx-auto text-center animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
-            Et samfund, hvor alle<br />har en chance
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Det Socialistiske Forbund kæmper for et retfærdigt samfund med stærk velfærd, 
-            lige muligheder og solidaritet for alle.
-          </p>
+        <div className="container mx-auto animate-fade-in">
+          <div className="text-center mb-12">
+            <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
+              Et samfund, hvor alle<br />har en chance
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Det Socialistiske Forbund kæmper for et retfærdigt samfund med stærk velfærd, 
+              lige muligheder og solidaritet for alle.
+            </p>
+          </div>
+
+          {/* Valgkampsvideo */}
+          <div className="max-w-5xl mx-auto mb-12 animate-fade-in-up">
+            <Card className="overflow-hidden shadow-elegant hover:shadow-hover transition-all">
+              <div className="relative aspect-video bg-muted">
+                <video 
+                  controls 
+                  className="w-full h-full object-cover"
+                  poster="/video/valgkamp-poster.jpg"
+                >
+                  <source src="/video/valgkamp.mp4" type="video/mp4" />
+                  Din browser understøtter ikke video afspilning.
+                </video>
+              </div>
+            </Card>
+          </div>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up">
             <Link to="/bliv-medlem">
               <Button className="bg-gradient-primary hover:shadow-hover transition-all text-lg px-8 py-6 group">
