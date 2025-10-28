@@ -56,20 +56,20 @@ const Policies = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      <main className="pt-24 pb-16">
+      <main className="pt-20 sm:pt-24 pb-12 sm:pb-16">
         <div className="container mx-auto px-4">
           {/* Header */}
-          <div className="text-center mb-16 animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <div className="text-center mb-10 sm:mb-16 animate-fade-in">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4">
               Vores mærkesager
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
               Det er disse værdier og politikker, vi kæmper for hver eneste dag
             </p>
           </div>
 
           {/* Policy Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in-up">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 animate-fade-in-up">
             {policies.map((policy, index) => (
               <PolicyCard
                 key={policy.title}
@@ -80,15 +80,15 @@ const Policies = () => {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-20 text-center bg-gradient-subtle rounded-2xl p-12 shadow-elegant animate-fade-in-up">
-            <h2 className="text-3xl font-bold text-foreground mb-4">
+          <div className="mt-12 sm:mt-16 md:mt-20 text-center bg-gradient-subtle rounded-2xl p-6 sm:p-8 md:p-12 shadow-elegant animate-fade-in-up">
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">
               Vil du være med til at gøre en forskel?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
               Bliv medlem af DSF og vær med til at skabe et mere retfærdigt samfund
             </p>
             <a href="/bliv-medlem">
-              <button className="bg-gradient-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-hover transition-all duration-300 hover:scale-105">
+              <button className="w-full sm:w-auto bg-gradient-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:shadow-hover transition-all duration-300 hover:scale-105">
                 Bliv medlem nu
               </button>
             </a>

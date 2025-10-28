@@ -37,20 +37,20 @@ const Index = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 bg-gradient-subtle">
+      <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 bg-gradient-subtle">
         <div className="container mx-auto animate-fade-in">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
-              Et samfund, hvor alle<br />har en chance
+          <div className="text-center mb-8 sm:mb-12">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-foreground mb-4 sm:mb-6 leading-tight px-2">
+              Et samfund, hvor alle har en chance
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 sm:mb-8 max-w-3xl mx-auto px-4">
               Det Socialistiske Forbund kæmper for et retfærdigt samfund med stærk velfærd, 
               lige muligheder og solidaritet for alle.
             </p>
           </div>
 
           {/* Valgkampsvideo */}
-          <div className="max-w-5xl mx-auto mb-12 animate-fade-in-up">
+          <div className="max-w-5xl mx-auto mb-8 sm:mb-12 animate-fade-in-up px-2">
             <Card className="overflow-hidden shadow-elegant hover:shadow-hover transition-all">
               <div className="relative aspect-video bg-muted">
                 <iframe
@@ -64,15 +64,15 @@ const Index = () => {
             </Card>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up">
-            <Link to="/bliv-medlem">
-              <Button className="bg-gradient-primary hover:shadow-hover transition-all text-lg px-8 py-6 group">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in-up px-4">
+            <Link to="/bliv-medlem" className="w-full sm:w-auto">
+              <Button className="w-full sm:w-auto bg-gradient-primary hover:shadow-hover transition-all text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 group">
                 Bliv medlem
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
-            <Link to="/maerkesager">
-              <Button variant="outline" className="text-lg px-8 py-6 hover:bg-secondary">
+            <Link to="/maerkesager" className="w-full sm:w-auto">
+              <Button variant="outline" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 hover:bg-secondary">
                 Læs om vores politik
               </Button>
             </Link>
@@ -81,12 +81,12 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-20 px-4">
+      <section className="py-12 sm:py-16 md:py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center animate-fade-in-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 sm:mb-6">
             Hvem er vi?
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed px-2">
             Det Socialistiske Forbund er et politisk parti, der arbejder for et samfund 
             bygget på solidaritet, lighed og fællesskab. Vi tror på, at alle mennesker 
             fortjener en værdig tilværelse med adgang til sundhed, uddannelse og tryghed. 
@@ -97,27 +97,27 @@ const Index = () => {
       </section>
 
       {/* Policies Overview */}
-      <section className="py-20 px-4 bg-gradient-subtle">
+      <section className="py-12 sm:py-16 md:py-20 px-4 bg-gradient-subtle">
         <div className="container mx-auto">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <div className="text-center mb-8 sm:mb-12 animate-fade-in">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
               Vores mærkesager
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-base sm:text-lg text-muted-foreground px-4">
               Vi kæmper for et bedre samfund på flere områder
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto animate-fade-in-up">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-5xl mx-auto animate-fade-in-up">
             {policies.map((policy, index) => {
             const Icon = policy.icon;
-            return <Card key={policy.title} className="p-6 text-center hover:shadow-hover transition-all duration-300 hover:scale-105 cursor-pointer group" style={{
+            return <Card key={policy.title} className="p-3 sm:p-4 md:p-6 text-center hover:shadow-hover transition-all duration-300 hover:scale-105 cursor-pointer group" style={{
               animationDelay: `${index * 100}ms`
             }}>
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-lg bg-primary-light flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Icon className="w-8 h-8 text-primary" />
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-2 sm:mb-3 md:mb-4 rounded-lg bg-primary-light flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-primary" />
                   </div>
-                  <h3 className="font-semibold text-foreground">{policy.title}</h3>
+                  <h3 className="font-semibold text-foreground text-xs sm:text-sm md:text-base">{policy.title}</h3>
                 </Card>;
           })}
           </div>
@@ -131,17 +131,17 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4">
+      <section className="py-12 sm:py-16 md:py-20 px-4">
         <div className="container mx-auto max-w-4xl">
-          <Card className="p-12 text-center bg-gradient-primary text-primary-foreground shadow-elegant animate-fade-in-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <Card className="p-6 sm:p-8 md:p-12 text-center bg-gradient-primary text-primary-foreground shadow-elegant animate-fade-in-up">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
               Vil du gøre en forskel?
             </h2>
-            <p className="text-lg mb-8 text-primary-foreground/90">
+            <p className="text-base sm:text-lg mb-6 sm:mb-8 text-primary-foreground/90 px-2">
               Sammen er vi stærkere. Bliv en del af bevægelsen for et mere retfærdigt samfund.
             </p>
             <Link to="/bliv-medlem">
-              <Button size="lg" className="bg-background text-primary hover:bg-background/90 hover:scale-105 transition-all">
+              <Button size="lg" className="bg-background text-primary hover:bg-background/90 hover:scale-105 transition-all w-full sm:w-auto">
                 Bliv medlem i dag
               </Button>
             </Link>

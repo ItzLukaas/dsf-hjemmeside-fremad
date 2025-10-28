@@ -132,12 +132,12 @@ const Membership = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4">
+      <section className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 animate-fade-in px-2">
             Bliv Medlem og Stem
           </h1>
-          <p className="text-xl text-muted-foreground animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground animate-fade-in px-4" style={{ animationDelay: "0.1s" }}>
             {user 
               ? "Vær med til at skabe forandring - stem på partiet i dag!"
               : "Log ind eller opret en bruger for at blive medlem og stemme"
@@ -147,7 +147,7 @@ const Membership = () => {
       </section>
 
       {/* Content Section */}
-      <section className="pb-20 px-4">
+      <section className="pb-12 sm:pb-16 md:pb-20 px-4">
         <div className="container mx-auto max-w-6xl">
           {!user ? (
             // Not logged in
@@ -183,7 +183,7 @@ const Membership = () => {
             </div>
           ) : (
             // Logged in
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
               {/* User Info Card */}
               <Card className="animate-fade-in">
                 <CardHeader>

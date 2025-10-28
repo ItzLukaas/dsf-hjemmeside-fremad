@@ -31,35 +31,35 @@ const Partiprogram = () => {
   return <div className="min-h-screen bg-background">
       <Navigation />
       
-      <main className="pt-24 pb-16">
+      <main className="pt-20 sm:pt-24 pb-12 sm:pb-16">
         <div className="container mx-auto px-4">
           {/* Hero Section */}
-          <div className="text-center mb-20 animate-fade-in">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20 animate-fade-in">
             
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Et samfund bygget på <br />
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 leading-tight px-2">
+              Et samfund bygget på <br className="hidden sm:block" />
               <span className="text-transparent bg-clip-text bg-gradient-primary">
                 lighed, tryghed og fællesskab
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
               Det Socialistiske Forbund kæmper for et samfund, hvor alle får mulighed 
               for at leve et godt liv, og hvor samfundet tager ansvar for både mennesker og miljø.
             </p>
           </div>
 
           {/* Vision Statement */}
-          <div className="mb-20 max-w-4xl mx-auto">
-            <div className="bg-gradient-subtle rounded-2xl p-8 md:p-12 shadow-elegant border border-border animate-fade-in-up">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          <div className="mb-12 sm:mb-16 md:mb-20 max-w-4xl mx-auto">
+            <div className="bg-gradient-subtle rounded-2xl p-5 sm:p-6 md:p-8 lg:p-12 shadow-elegant border border-border animate-fade-in-up">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 sm:mb-6">
                 Vores Vision
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed mb-3 sm:mb-4">
                 Vi arbejder for et Danmark, hvor solidaritet og fællesskab er grundlaget 
                 for vores samfund. Et land hvor ingen bliver ladt i stikken, og hvor alle 
                 bidrager efter evne og får efter behov.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
                 Gennem demokratisk deltagelse og stærke fælles institutioner sikrer vi, 
                 at magten ligger hos folket – ikke hos kapitalens interesser.
               </p>
@@ -67,11 +67,11 @@ const Partiprogram = () => {
           </div>
 
           {/* Core Values Grid */}
-          <div className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
+          <div className="mb-12 sm:mb-16 md:mb-20">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-foreground mb-8 sm:mb-10 md:mb-12">
               Vores Grundværdier
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in-up">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 animate-fade-in-up">
               {values.map((value, index) => <div key={value.title} className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 hover:shadow-hover transition-all duration-300 hover:-translate-y-1" style={{
               animationDelay: `${index * 100}ms`
             }}>
@@ -93,11 +93,11 @@ const Partiprogram = () => {
           </div>
 
           {/* Key Principles */}
-          <div className="max-w-4xl mx-auto mb-20 animate-fade-in-up">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
+          <div className="max-w-4xl mx-auto mb-12 sm:mb-16 md:mb-20 animate-fade-in-up">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6 sm:mb-8">
               Vores Principper
             </h2>
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <div className="border-l-4 border-primary pl-6 py-2">
                 <h3 className="text-xl font-bold text-foreground mb-2">
                   Økonomisk retfærdighed
@@ -141,21 +141,21 @@ const Partiprogram = () => {
           </div>
 
           {/* CTA Section */}
-          <div className="text-center bg-gradient-subtle rounded-2xl p-12 shadow-elegant animate-fade-in-up">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <div className="text-center bg-gradient-subtle rounded-2xl p-6 sm:p-8 md:p-12 shadow-elegant animate-fade-in-up">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
               Vil du være med til at realisere denne vision?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
               Sammen kan vi skabe et mere retfærdigt samfund for alle
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/bliv-medlem">
-                <Button size="lg" className="bg-gradient-primary hover:shadow-hover transition-all duration-300 hover:scale-105">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+              <a href="/bliv-medlem" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full sm:w-auto bg-gradient-primary hover:shadow-hover transition-all duration-300 hover:scale-105">
                   Bliv medlem nu
                 </Button>
               </a>
-              <a href="/maerkesager">
-                <Button size="lg" variant="outline" className="hover:bg-secondary transition-all">
+              <a href="/maerkesager" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto hover:bg-secondary transition-all">
                   Læs om vores mærkesager
                 </Button>
               </a>

@@ -30,47 +30,47 @@ const Contact = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      <main className="pt-24 pb-16">
+      <main className="pt-20 sm:pt-24 pb-12 sm:pb-16">
         <div className="container mx-auto px-4">
           {/* Header */}
-          <div className="text-center mb-16 animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <div className="text-center mb-10 sm:mb-16 animate-fade-in">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4">
               Kontakt os
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
               Har du spørgsmål eller vil du i kontakt med os? Vi er her for dig.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
             {/* Contact Info Cards */}
-            <div className="space-y-6 animate-fade-in-up">
-              <Card className="p-6 hover:shadow-hover transition-shadow">
-                <div className="w-12 h-12 rounded-lg bg-primary-light flex items-center justify-center mb-4">
-                  <Mail className="w-6 h-6 text-primary" />
+            <div className="space-y-4 sm:space-y-6 animate-fade-in-up">
+              <Card className="p-4 sm:p-6 hover:shadow-hover transition-shadow">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary-light flex items-center justify-center mb-3 sm:mb-4">
+                  <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">Email</h3>
-                <p className="text-muted-foreground text-sm">kontakt@dsf.dk</p>
-                <p className="text-muted-foreground text-sm">presse@dsf.dk</p>
+                <h3 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Email</h3>
+                <p className="text-muted-foreground text-xs sm:text-sm break-all">kontakt@dsf.dk</p>
+                <p className="text-muted-foreground text-xs sm:text-sm break-all">presse@dsf.dk</p>
               </Card>
 
-              <Card className="p-6 hover:shadow-hover transition-shadow">
-                <div className="w-12 h-12 rounded-lg bg-primary-light flex items-center justify-center mb-4">
-                  <Phone className="w-6 h-6 text-primary" />
+              <Card className="p-4 sm:p-6 hover:shadow-hover transition-shadow">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary-light flex items-center justify-center mb-3 sm:mb-4">
+                  <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">Telefon</h3>
-                <p className="text-muted-foreground text-sm">+45 12 34 56 78</p>
-                <p className="text-muted-foreground text-sm text-xs mt-1">
+                <h3 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Telefon</h3>
+                <p className="text-muted-foreground text-xs sm:text-sm">+45 12 34 56 78</p>
+                <p className="text-muted-foreground text-xs mt-1">
                   Man-Fre: 9:00-16:00
                 </p>
               </Card>
 
-              <Card className="p-6 hover:shadow-hover transition-shadow">
-                <div className="w-12 h-12 rounded-lg bg-primary-light flex items-center justify-center mb-4">
-                  <MapPin className="w-6 h-6 text-primary" />
+              <Card className="p-4 sm:p-6 hover:shadow-hover transition-shadow">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary-light flex items-center justify-center mb-3 sm:mb-4">
+                  <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">Adresse</h3>
-                <p className="text-muted-foreground text-sm">
+                <h3 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Adresse</h3>
+                <p className="text-muted-foreground text-xs sm:text-sm">
                   Eksempelvej 123<br />
                   1234 København K<br />
                   Danmark
@@ -80,14 +80,14 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div className="lg:col-span-2 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
-              <Card className="p-8">
-                <h2 className="text-2xl font-bold text-foreground mb-6">
+              <Card className="p-5 sm:p-6 md:p-8">
+                <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">
                   Send os en besked
                 </h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                      <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
                         Navn *
                       </label>
                       <Input
@@ -97,11 +97,12 @@ const Contact = () => {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="Dit navn"
+                        className="text-sm sm:text-base"
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                      <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
                         Email *
                       </label>
                       <Input
@@ -111,12 +112,13 @@ const Contact = () => {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="din@email.dk"
+                        className="text-sm sm:text-base"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="subject" className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
                       Emne *
                     </label>
                     <Input
@@ -126,11 +128,12 @@ const Contact = () => {
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                       placeholder="Hvad drejer din henvendelse sig om?"
+                      className="text-sm sm:text-base"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2">
                       Besked *
                     </label>
                     <Textarea
@@ -140,12 +143,13 @@ const Contact = () => {
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Skriv din besked her..."
                       rows={6}
+                      className="text-sm sm:text-base"
                     />
                   </div>
 
                   <Button 
                     type="submit" 
-                    className="w-full bg-gradient-primary hover:shadow-hover transition-all group"
+                    className="w-full bg-gradient-primary hover:shadow-hover transition-all group text-sm sm:text-base py-5 sm:py-6"
                   >
                     <Send className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />
                     Send besked
