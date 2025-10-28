@@ -53,14 +53,13 @@ const Index = () => {
           <div className="max-w-5xl mx-auto mb-12 animate-fade-in-up">
             <Card className="overflow-hidden shadow-elegant hover:shadow-hover transition-all">
               <div className="relative aspect-video bg-muted">
-                <video 
-                  controls 
-                  className="w-full h-full object-cover"
-                  poster="/video/valgkamp-poster.jpg"
-                >
-                  <source src="/video/valgkamp.mp4" type="video/mp4" />
-                  Din browser understøtter ikke video afspilning.
-                </video>
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/hoEoTtKliZc"
+                  title="Det Socialistiske Forbund - Valgkampsvideo"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
             </Card>
           </div>
